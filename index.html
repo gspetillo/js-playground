@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Javascript Playground</h1>
+    <div id="input">
+        <form name="programming" method="POST">
+            <textarea name="code" placeholder="Seu código aqui..."></textarea><br>
+        </form>
+    </div>
+    <div id="buttons">
+        <a class="button" href="#" onclick="execute()">Executar</a>
+        <a class="button" href="#" onclick="refresh()">Refresh</a>
+    </div>
+    <div id="playground">
+        <p id="title">Output</p>
+        <p id="output">
+            <script>
+                function execute() {
+                    var code = document.forms["programming"]["code"].value;
+                    document.getElementById("output").innerHTML = "";
+                    if(code == "") document.getElementById("output").innerHTML = "Insert valid code!"
+                    else document.getElementById("output").innerHTML = eval(code);                    
+                }
+                function refresh() {
+                    window.location.reload();
+                }
+            </script>
+        </p>
+    </div>
+    <footer>
+        <a id="linkedin" href="https://www.linkedin.com/in/gabrielpetillo/"> Made by: Gabriel Petillo </a>
+    </footer>
+</body>
+
+</html>
